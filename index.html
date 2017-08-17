@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drag Drop Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../skola/untitled/css/style1.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.8/interact.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../skola/untitled/js/jquery.datetimepicker.full.js"></script>
+    <script type="text/javascript" src="../skola/untitled/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="../skola/untitled/css/jquery.datetimepicker.css"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../skola/untitled/css/style1.css">
+    <script src="js/login.js"></script>
+    <link rel="STYLESHEET" type="text/css" href="../skola/untitled/css/pwdwidget.css" />
+    <script src="../skola/untitled/js/pwdwidget.js" type="text/javascript"></script>
+
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+</head>
+<body >
+<div id="providnaslika"></div>
+<div id="loginf">
+    <img src="../skola/untitled/images/kapa.png" id="naslovprijava">
+    <div id="forma">
+
+        <label for="username">E-mail adresa:</label>
+    <input type="text" id="username">
+        <label for="password">Lozinka:</label>
+    <input type="password" id="password">
+        <h6 id="neispravni">Neispravni podaci</h6>
+    <button class="readmore" id="prijava">Prijavi se</button>
+        <button class="readmore" id="odustani">Odustani</button>
+        <h5 id="registracijadugme">Nemate nalog? Registrujte se ovde</h5>
+    </div>
+
+    <div id="forma1">
+
+        <label for="ime">Ime i prezime:</label>
+        <input type="text" id="ime">
+        <label for="username1">E-mail adresa:</label>
+        <input type="text" id="username1">
+        <label for="password1">Lozinka:</label>
+        <input type="password" id="password1" onkeyup="passwordStrength()">
+        <div id="progress"><div id="progress1"></div></div>
+        <label for="telefon">Broj telefona:</label>
+        <input type="text" id="telefon">
+        <h6 id="neispravni1">Korisnik sa unetom adresom već postoji</h6>
+        <button class="readmore" id="prijava1">Registruj se</button>
+        <button class="readmore" id="odustani1">Odustani</button>
+        <h5 id="registracijadugme1">Imate nalog? Prijavite se ovde</h5>
+
+    </div>
+</div>
+<nav class="navbar navbar-default navbar-fixed-top ">
+    <div class="container-fluid">
+        <div class="navbar-header ">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">LOGO</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li id="pocetnamenu" class="active"><a href="#" >Početna</a></li>
+                <li id="restoranmenu"><a href="#" >Restoran</a></li>
+                <li id="rezervacijemenu"><a href="#" >Rezervacije</a></li>
+
+                <li><a id="prijavadugme">Prijava</a></li>
+
+            </ul>
+
+        </div>
+    </div>
+
+</nav>
+
+
+<div class="row">
+
+    <div class="bigimage col-sm-12" id="bg">
+        <div class="dots">
+            <div class="dot1" id="dot1"></div>
+            <div class="dot" id="dot2"></div>
+            <div class="dot" id="dot3"></div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="row1" id="restoran">
+
+    <div class="row section1">
+        <div class="container">
+            <div class="sub col-sm-4">
+                <img src="../skola/untitled/images/img1.jpg" alt="" class="smallimage">
+                <h4 class="title1">LOKACIJA</h4>
+                <h5 class="text1">Restoran se nalazi na mirnom i prijatnom mestu.</h5>
+                <button class="readmore">Pročitaj više...</button>
+            </div>
+            <div class="sub col-sm-4 section1" id="second">
+                <img src="../skola/untitled/images/img2.jpg" alt="" class="smallimage">
+                <h4 class="title1">AMBIJENT</h4>
+                <h5 class="text1">Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam
+                    semper libero, sit.</h5>
+                <button class="readmore">Pročitaj više...</button>
+            </div>
+            <div class="sub col-sm-4 section1" id="third">
+                <img src="../skola/untitled/images/img3.jpg" alt="" class="smallimage">
+                <h4 class="title1">HRANA I PIĆE</h4>
+                <h5 class="text1">Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam
+                    semper libero, sit.</h5>
+                <button class="readmore">Pročitaj više...</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="row">
+    <div class="bigtitle" id ="prikaziRez">
+        <div class="container">
+            <div class="line"></div>
+            <h4>Rezervacije stolova</h4>
+
+        </div>
+    </div>
+</div>
+
+<div class="row" id="rezz" hidden>
+
+    <div class="col-sm-12 sub2"  >
+
+        <div id="restriction"><h1>Dostupno samo registrovanim korisnicima</h1></div>
+
+        <div id="legenda">
+            <div id="slobodni" class="legendaelement"><span id="dcolor"></span>Dostupni</div>
+            <div id="zauzeti" class="legendaelement"><span id="zcolor"></span>Zauzeti</div>
+            <div id="rezervisani" class="legendaelement"><span id="rcolor"></span>Rezervisani</div>
+        </div>
+
+        <div id="demo">
+
+        </div>
+
+        <div id="kalendaricon">
+            <img src="../skola/untitled/images/calendar.png" onmouseover="this.src='images/calendar1.png';" onmouseout="this.src='images/calendar.png';" width="25" height="25">
+        </div>
+    <div id = "overlaydemo" class="overlay">
+        <div id="kalendar">
+            <h4>Izaberite datum i vreme rezervacije</h4>
+            <input type="text" id="datetimepicker3"/>
+            <button class="readmore" id="dostupnost">Proveri dostupnost</button>
+        </div>
+
+    </div>
+        <div id = "overlayrez" class="overlay">
+            <div id="rezervacijacomf">
+                <h2 id="naslovcomf">Da li želite da rezervišete sto za dve osobe 24.05.2017 u 16:00?</h2>
+                <button class="readmore" id="comfyes">Da</button>
+                <button class="readmore" id="comfno">Ne</button>
+            </div>
+        </div>
+
+        <div id = "overlayrez1" class="overlay">
+            <div id="rezervacijacomf1">
+                <h2 id="naslovcomf1">Da li želite da otkažete rezervaciju stola za dve osobe 24.05.2017 u 16:00?</h2>
+                <button class="readmore" id="comfyes1">Da</button>
+                <button class="readmore" id="comfno1">Ne</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<div class="row footer">
+    <div class="container">
+        <div class="social col-sm-12">
+            <img src="../skola/untitled/images/facebook.png" alt="" class="icons">
+            <img src="../skola/untitled/images/youtube.png" alt="" class="icons">
+            <img src="../skola/untitled/images/linkedin.png" alt="" class="icons">
+            <img src="../skola/untitled/images/google.png" alt="" class="icons">
+            <img src="../skola/untitled/images/twitter.png" alt="" class="icons">
+        </div>
+
+        <div class="subfooter col-sm-4">
+            <h4 class="title1">Mapa sajta</h4>
+            <h5 class="footertext">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+                dolor. Aenean massa. Cum sociis nato.</h5>
+
+        </div>
+        <div class="subfooter col-sm-4">
+            <h4 class="title1">Kontakt</h4>
+            <h5 class="footertext">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+                dolor. Aenean massa. Cum sociis nato.</h5>
+        </div>
+        <div class="subfooter col-sm-4">
+            <h4 class="title1">O nama</h4>
+            <h5 class="footertext">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+                dolor. Aenean massa. Cum sociis nato.</h5>
+        </div>
+
+
+
+    </div>
+    <div class="sign  col-sm-12">© 2017. Filip Ilić</div>
+</div>
+
+<a href="#" class="backtotop">Back</a>
+
+
+</body>
+
+<script>
+
+var idstola;
+var clglob;
+
+function passwordStrength()
+{
+
+    var password = $("#password1").val();
+
+    var score   = 0;
+
+    if (password.length > 6) {score++;}
+
+    if ( ( password.match(/[a-z]/) ) &&
+        ( password.match(/[A-Z]/) ) ) {score++;}
+
+    if (password.match(/\d+/)){ score++;}
+
+    if ( password.match(/[^a-z\d]+/) )	{score++};
+
+    if (password.length > 12){ score++;}
+
+
+
+
+
+    if(password.length < 1){
+        $("#progress").css("display", "none");
+    }
+    else if(score<3){
+        $("#progress").css("display", "block");
+        $("#progress1").css("width", "33%");
+        $("#progress1").css("background", "#cc0600");
+
+    }
+    else if(score<4){
+        $("#progress").css("display", "block");
+        $("#progress1").css("width", "66%");
+        $("#progress1").css("background", "#cc7000");
+    }
+    else if(score>=4){
+        $("#progress").css("display", "block");
+        $("#progress1").css("width", "100%");
+        $("#progress1").css("background", "#00cc04");
+
+    }
+
+
+
+
+
+}
+
+
+    $( document ).ready(function() {
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.backtotop').fadeIn();
+            } else {
+                $('.backtotop').fadeOut();
+            }
+        });
+
+        $('.backtotop').click(function () {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 600);
+            return false;
+        });
+
+        var mere = [];
+        mere["2"] = "width='113' height='70'";
+        mere["4"] = "width='109' height='110'";
+        mere["6"] = "width='159' height='110'";
+        mere["8"] = "width='157' height='90'";
+        mere["2r"] = "width='70' height='117'";
+        mere["6r"] = "width='110' height='163'";
+        mere["8r"] = "width='90' height='161'";
+        $.ajax({
+            url: 'ucitajraspored.php',
+            success: function(data) {
+
+                var obj = jQuery.parseJSON(data);
+                $.each(obj, function(key,value) {
+
+                    $("#demo").append("<div class='nondraggable dis' onclick='rezervisi(this.id, this.className)' id='" + value.id  + "' data-b='" + value.vrsta  + "'  data-x='" + value.x  + "' data-y='" + value.y  + "' style='transform: translate(" + value.x + "px, " + value.y + "px)'><img src='images/" + value.vrsta  + ".png' " + mere[value.vrsta] + "></div>")
+                });
+            }
+        });
+
+        $.datetimepicker.setLocale('sr-YU');
+        $('#datetimepicker3').datetimepicker({
+                value:new Date(),
+
+                onshow:ucitaj()
+
+        })
+
+
+        $("#prikaziRez").click(function(){
+            $('#rezz').stop().slideToggle('slow');
+        });
+
+        $( "#demo" ).contextmenu(function(event) {
+            event.preventDefault();
+            $('#overlaydemo').stop().slideToggle('slow');
+        });
+
+
+        $( "#overlaydemo" ).contextmenu(function(event) {
+            event.preventDefault();
+            $('#overlaydemo').stop().slideToggle('slow');
+        });
+
+        $( "#kalendaricon" ).click(function(event) {
+            event.preventDefault();
+            $('#overlaydemo').stop().slideToggle('slow');
+        });
+
+        $( "#dostupnost" ).click(function(event) {
+            event.preventDefault();
+            $('#overlaydemo').stop().slideToggle('slow');
+        });
+
+        $("#comfyes").click(function(){
+
+            id=idstola;
+            cl=clglob;
+
+
+            var vreme = $('#datetimepicker3').val().split('/').join('-') + ":00";
+
+
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'rezervisi.php',
+                    data: {vreme: vreme, sto: id},
+                    success: function (data) {
+
+                        $("#" + id).addClass("dis");
+                        $("#" + id).addClass("rez");
+                    }
+
+
+                });
+
+
+            $('#overlayrez').stop().slideToggle('slow');
+        });
+
+        $("#comfno").click(function(){
+            $('#overlayrez').stop().slideToggle('slow');
+        });
+
+        $("#comfyes1").click(function(){
+
+            id=idstola;
+            cl=clglob;
+            var vreme = $('#datetimepicker3').val().split('/').join('-') + ":00";
+
+    otkazi(id, vreme);
+
+
+            $('#overlayrez1').stop().slideToggle('slow');
+        });
+
+        $("#comfno1").click(function(){
+            $('#overlayrez1').stop().slideToggle('slow');
+        });
+
+        $("#pocetnamenu").click(function() {
+            $('html, body').animate({
+                scrollTop: $("body").offset().top
+
+            }, 1000);
+            $("#restoranmenu").removeClass( "active");
+            $("#rezervacijemenu").removeClass( "active");
+            $("#pocetnamenu").addClass( "active");
+
+
+
+        });
+
+        $("#restoranmenu").click(function() {
+            $('html, body').animate({
+                scrollTop: $("#restoran").offset().top
+            }, 1000);
+            $("#pocetnamenu").removeClass( "active");
+            $("#rezervacijemenu").removeClass( "active");
+            $("#restoranmenu").addClass( "active");
+
+        });
+
+        $("#rezervacijemenu").click(function() {
+            $('#rezz').stop().slideDown('slow');
+            $('html, body').animate({
+                scrollTop: $("#prikaziRez").offset().top
+            }, 1000);
+            $("#pocetnamenu").removeClass( "active");
+            $("#restoranmenu").removeClass( "active");
+            $("#rezervacijemenu").addClass( "active");
+
+        });
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() < 400)
+            {
+                $("#restoranmenu").removeClass( "active");
+                $("#rezervacijemenu").removeClass( "active");
+                $("#pocetnamenu").addClass( "active");
+
+            }
+            else if ($(this).scrollTop() > 400 && $(this).scrollTop() < 900)
+            {
+                $("#pocetnamenu").removeClass( "active");
+                $("#rezervacijemenu").removeClass( "active");
+                $("#restoranmenu").addClass( "active");
+
+            }
+            else if ($(this).scrollTop() > 900)
+            {
+                $("#pocetnamenu").removeClass( "active");
+                $("#restoranmenu").removeClass( "active");
+                $("#rezervacijemenu").addClass( "active");
+
+            }
+        });
+
+        $("#prijavadugme").click(function() {
+            if ($(this).html()=="Prijava")
+            {
+
+
+            document.location.href="#top";
+            $("body").css("overflow", "hidden");
+            $( "#providnaslika" ).fadeIn( 1000, function() {});
+            $( "#loginf" ).fadeIn( 1000, function() {});
+            }
+
+            else
+            {
+                $.ajax({
+                    url: 'logout.php',
+
+                    success: function (data) {
+                       location.reload();
+                    }
+
+
+                });
+            }
+        });
+
+        $("#odustani").click(function() {
+            $("body").css("overflow", "auto");
+            $("body").css("overflow-x", "hidden");
+            $( "#providnaslika" ).fadeOut( 1000, function() {});
+            $( "#loginf" ).fadeOut( 1000, function() {});
+
+        });
+
+        $("#registracijadugme").click(function() {
+            $( "#forma" ).fadeOut( 1000, function() {});
+            $( "#forma1" ).fadeIn( 1000, function() {});
+
+
+        });
+
+        $("#registracijadugme1").click(function() {
+            $( "#forma1" ).fadeOut( 1000, function() {});
+            $( "#forma" ).fadeIn( 1000, function() {});
+
+
+        });
+
+        $("#odustani1").click(function() {
+            $("body").css("overflow", "auto");
+            $("body").css("overflow-x", "hidden");
+            $( "#providnaslika" ).fadeOut( 1000, function() {});
+            $( "#loginf" ).fadeOut( 1000, function() {});
+
+        });
+
+        $("#dot1").click(function() {
+            $(".bigimage").css("background-image", "url(images/food2.jpg)");
+
+            $("#dot2").removeClass("dot1");
+            $("#dot3").removeClass("dot1");
+            $("#dot2").addClass("dot");
+            $("#dot3").addClass("dot");
+            $("#dot1").addClass("dot1");
+        });
+
+        $("#dot2").click(function() {
+            $(".bigimage").css("background-image", "url(images/food1.jpg)");
+            $("#dot1").removeClass("dot1");
+            $("#dot3").removeClass("dot1");
+            $("#dot1").addClass("dot");
+            $("#dot3").addClass("dot");
+            $("#dot2").addClass("dot1");
+        });
+
+        $("#dot3").click(function() {
+            $(".bigimage").css("background-image", "url(images/food3.jpg)");
+            $("#dot1").removeClass("dot1");
+            $("#dot2").removeClass("dot1");
+            $("#dot1").addClass("dot");
+            $("#dot2").addClass("dot");
+            $("#dot3").addClass("dot1");
+        });
+
+        $("#prijava").click(function() {
+            $.ajax({
+                type: 'POST',
+                url: 'login.php',
+                data: {email: $("#username").val(), password: $("#password").val()},
+                success: function (data) {
+                    if (data==0)
+                    {
+                        $("#neispravni").fadeIn( 500, function() {});
+                    } else {
+                        location.reload();
+                    }
+                }
+
+
+            });
+        });
+
+        $( "#username" ).focus(function() {
+            $("#neispravni").fadeOut( 500, function() {});
+        });
+
+        $( "#password" ).focus(function() {
+            $("#neispravni").fadeOut( 500, function() {});
+        });
+
+        checkLogin();
+
+        $( "#username1" ).blur(function() {
+            $.ajax({
+                type: 'POST',
+                url: 'checkemail.php',
+                data: {email: $("#username1").val()},
+                success: function (data) {
+                   if(data==1)
+                   {
+                       $("#username1").css("background-color", "#c0392b");
+                   } else {
+                       $("#username1").css("background-color", "#ecf0f1");
+                   }
+                }
+
+
+            });
+        });
+
+    });
+
+$( "#username1" ).focus(function() {
+    $("#username1").css("background-color", "#ecf0f1");
+    $("#neispravni1").css("display","none");
+});
+
+$("#prijava1").click(function() {
+    $.ajax({
+        type: 'POST',
+        url: 'checkemail.php',
+        data: {email: $("#username1").val()},
+        success: function (data) {
+            if(data==1)
+            {
+            $("#neispravni1").css("display","block");
+            } else {
+                registracija();
+            }
+        }
+
+
+    });
+});
+
+function registracija() {
+    $.ajax({
+        type: 'POST',
+        url: 'registracija.php',
+        data: {ime: $("#ime").val(), email: $("#username1").val(), password: $("#password1").val(), telefon: $("#telefon").val() },
+        success: function (data) {
+
+           location.reload();
+        }
+
+
+    });
+}
+
+
+function checkLogin() {
+    $.ajax({
+
+        url: 'checksession.php',
+
+        success: function (data) {
+            if (data==0)
+            {
+                $("#demo").css("display", "none");
+                $("#legenda").css("display", "none");
+                $("#kalendaricon").css("display", "none");
+                $("#restriction").css("display", "block");
+            } else {
+                $("#demo").css("display", "block");
+                $("#legenda").css("display", "inline-block");
+                $("#kalendaricon").css("display", "inline-block");
+                $("#restriction").css("display", "none");
+                $.ajax({
+                    url: 'getIme.php',
+                    success: function (data) {
+                        $("#prijavadugme").html(data + " - odjava");
+                    }
+                });
+
+            }
+
+        }
+
+
+    });
+
+}
+
+
+</script>
+
+<script>
+    var rV=podaciRv().split(",");
+
+    function ucitaj() {
+        var neradni=[];
+        for (var i =0; i < rV.length; i++)
+        {
+            if (rV[i]=="0")
+            {
+               neradni.push(i);
+            }
+        }
+
+        neradan(neradni);
+        logic(new Date().getDay());
+
+    }
+ function logic(dan) {
+
+
+
+
+    if(rV[dan]=="0")
+    {
+        $('#datetimepicker3').datetimepicker({
+            timepicker:false
+        });
+    } else {
+        $('#datetimepicker3').datetimepicker({
+            timepicker:true
+        });
+        radnoVreme(convertRv(rV[dan]));
+    }
+
+
+
+ }
+
+ function convertRv(rv) {
+        var rtn=[];
+        for (var i=rv.split("-")[0]; i<=rv.split("-")[1]; i++)
+        {
+            rtn.push(i + ":00");
+        }
+        return rtn;
+ }
+
+ function podaciRv()
+ {
+     var a;
+     $.ajax({
+
+         url: 'radnovreme.php',
+         async: false,
+         success: function (data) {
+                a=data;
+         }
+
+     });
+
+     return a;
+ }
+
+ function neradan(niz) {
+
+     $('#datetimepicker3').datetimepicker({
+         disabledWeekDays:niz,
+         timepicker:false
+
+
+     });
+ }
+
+
+
+$('#datetimepicker3').datetimepicker({
+    inline:true,
+    dayOfWeekStart:1
+
+
+});
+
+$('#datetimepicker3').datetimepicker({
+ timepicker:true,
+
+    minDate:'0',
+ onChangeDateTime:function(dp,$input){
+
+logic(dp.getDay());
+ provera($input);
+ proverauser($input);
+
+
+
+ }
+ });
+
+
+$(".nondraggable").click(function() {
+
+});
+
+
+
+function rezervisi(id, cl) {
+
+    idstola=id;
+    clglob=cl;
+    var datum = $('#datetimepicker3').val().split(' ')[0];
+    var datumf = datum.split("/")[2] + "." + datum.split("/")[1] + "." + datum.split("/")[0] + ".";
+    var vremef = $('#datetimepicker3').val().split(' ')[1];
+    var brojosoba = $("#" + id).attr("data-b").substr(0,1);
+    var slovima = [];
+    slovima["2"] = "dve osobe";
+    slovima["4"] = "četiri osobe";
+    slovima["6"] = "šest osoba";
+    slovima["8"] = "osam osoba";
+
+  if($("#" + id).hasClass("rez")==true)
+  {
+      $('#naslovcomf1').html("Da li želite da otkažete rezervaciju stola za " + slovima[brojosoba] + " " + datumf + " u " + vremef + "?");
+      $('#overlayrez1').stop().slideToggle('slow');
+  } else {
+
+
+      $('#naslovcomf').html("Da li želite da rezervišete sto za " + slovima[brojosoba] + " " + datumf + " u " + vremef + "?");
+      $('#overlayrez').stop().slideToggle('slow');
+  }
+
+
+
+
+
+
+
+}
+
+function otkazi(id, vreme) {
+    $.ajax({
+        type: 'POST',
+        url: 'otkazi.php',
+        data: {vreme: vreme, sto: id},
+        success: function (data) {
+
+            $("#" + id).removeClass("dis");
+            $("#" + id).removeClass("rez");
+        }
+
+
+    });
+}
+
+function provera($input) {
+
+    if (new Date($input.val()) < new Date())
+    {
+        $('.nondraggable').each(function() {
+
+            $(this).addClass("dis");
+
+        });
+    } else {
+        $('.nondraggable').each(function() {
+
+            $(this).removeClass("dis");
+
+        });
+    }
+
+    var vreme=$input.val().split('/').join('-') + ":00";
+    $.ajax({
+        type: 'POST',
+        url: 'rezervisani.php',
+        data: {vreme: vreme},
+        success: function(data) {
+            var niz = data.split(',');
+
+
+
+
+            for (var i in niz) {
+                $( "#" + niz[i]).addClass("dis");
+            }
+        }
+    });
+
+}
+
+function proverauser($input) {
+
+
+
+
+        $('.nondraggable').each(function() {
+
+            $(this).removeClass("rez");
+
+        });
+
+    if (new Date($input.val()) >= new Date()) {
+
+        var vreme = $input.val().split('/').join('-') + ":00";
+        $.ajax({
+            type: 'POST',
+            url: 'rezervisaniuser.php',
+            data: {vreme: vreme, user: "fica"},
+            success: function (data) {
+                var niz = data.split(',');
+                for (var i in niz) {
+                    $("#" + niz[i]).addClass("rez");
+                }
+
+            }
+        });
+
+    }
+
+
+}
+
+function radnoVreme(niz) {
+
+    $('#datetimepicker3').datetimepicker({
+
+        allowTimes:niz
+
+
+    });
+}
+
+</script>
+</html>
